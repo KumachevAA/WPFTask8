@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1622
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTask8.1", "WPFTask8.1\WPFTask8.1.csproj", "{BEA75953-26BC-401B-9C9C-9B4C0AECAE02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEA75953-26BC-401B-9C9C-9B4C0AECAE02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA75953-26BC-401B-9C9C-9B4C0AECAE02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA75953-26BC-401B-9C9C-9B4C0AECAE02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA75953-26BC-401B-9C9C-9B4C0AECAE02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5C4D6BD5-6180-4975-B940-41AA8C027C3B}
+	EndGlobalSection
+EndGlobal
