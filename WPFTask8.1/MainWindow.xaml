@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFTask8._1"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="Задача 8.1" Height="450" Width="800">
     <Grid>
@@ -31,7 +32,8 @@
                  Grid.Row="1"/>
 
         <DataGrid Grid.Row="2" AutoGenerateColumns="False" HeadersVisibility="Column"
-                  ItemsSource="{Binding Rows}">
+                  ItemsSource="{Binding Rows}"
+                  Margin="5">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=Id, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="№"/>
                 <DataGridTextColumn Binding="{Binding Path=Name, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Товар"/>
@@ -53,5 +55,16 @@
                 Margin="5"
                 Content="Сформировать накладную"
                 Click="Button_Click"/>
+
+        <Label Grid.Column="1" Content="Заказ №"
+               VerticalAlignment="Top" HorizontalAlignment="Left"
+               Padding="0" Margin="5"/>
+        <TextBox Grid.Column="1" Text="{Binding OrderNumber}"
+                 VerticalAlignment="Top" HorizontalAlignment="Left"
+                 Width="50" Margin="60, 5, 5, 5"/>
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Source={x:Static sys:DateTime.Now}, StringFormat=от dd.MM.yyyy}"
+                   VerticalAlignment="Top" HorizontalAlignment="Right"
+                   Margin="5"/>
     </Grid>
 </Window>
