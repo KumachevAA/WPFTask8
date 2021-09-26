@@ -5,8 +5,53 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFTask8._1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Задача 8.1" Height="450" Width="800">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="120" />
+        </Grid.ColumnDefinitions>
+
+        <Label Content="Поставщик" VerticalAlignment="Top" VerticalContentAlignment="Top"
+               Padding="0" Margin="5"/>
+        <TextBox Width="400" Text="{Binding Provider}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5" />
+
+        <Label Content="Покупатель" VerticalAlignment="Top" VerticalContentAlignment="Top"
+               Grid.Row="1"
+               Padding="0" Margin="5"/>
+        <TextBox Width="400" Text="{Binding Customer}" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5"
+                 Grid.Row="1"/>
+
+        <DataGrid Grid.Row="2" AutoGenerateColumns="False" HeadersVisibility="Column"
+                  ItemsSource="{Binding Rows}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=Id, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="№"/>
+                <DataGridTextColumn Binding="{Binding Path=Name, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Товар"/>
+                <DataGridTextColumn Binding="{Binding Path=Count, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Количество"/>
+                <DataGridTextColumn Binding="{Binding Path=Price, Mode=TwoWay}" ClipboardContentBinding="{x:Null}" Header="Цена"/>
+                <DataGridTextColumn IsReadOnly="True" Binding="{Binding Path=Total, Mode=OneWay}" ClipboardContentBinding="{x:Null}" Header="Сумма"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Grid.Row="3" Content="Итого: "
+               Padding="0" Margin="5"
+               VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <TextBlock Grid.Row="3" Text="{Binding Total}"
+                   Padding="0" Margin="5" FontSize="24pt"
+                   VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+
+        <Button Grid.Row="4" Width="200"
+                HorizontalAlignment="Left"
+                Margin="5"
+                Content="Сформировать накладную"
+                Click="Button_Click"/>
     </Grid>
 </Window>
